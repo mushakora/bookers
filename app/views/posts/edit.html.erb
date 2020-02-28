@@ -1,0 +1,9 @@
+<h1>Editing Book</h1>
+<%= form_for(@book, url:"/posts/#{@book.id}") do |f| %>
+	<h4>title</h4>
+	<%= f.text_field :title %>
+	<h4>body</h4>
+	<%= f.text_area :body %>
+	<%= f.submit 'Update book' %>
+<% end %>
+<a href="/post/index">Back</a>

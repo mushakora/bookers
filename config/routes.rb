@@ -1,18 +1,18 @@
 Rails.application.routes.draw do
   get '/' => 'home#top'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get 'posts/index' => 'posts#index'
+  get 'books/index' => 'books#index', as: 'index_book'
 
-  get 'posts/new' => 'posts#new'
+  post 'books' => 'books#create'
 
-  post 'posts' => 'posts#create'
+  get 'books/:id' => 'books#show', as: 'book'
 
-  get 'posts/:id' => 'posts#show', as: 'post'
+  get 'books/:id/edit' => 'books#edit', as: 'edit_book'
 
-  get 'posts/:id/edit' => 'posts#edit', as: 'edit_post'
+  patch 'books/:id' => 'books#update', as: 'update_book'
 
-  patch 'posts/:id' => 'posts#update', as: 'update_post'
+  delete 'books/:id' => 'books#destroy', as: 'destroy_book'
 
-  delete 'posts/:id' => 'posts#destroy', as: 'destroy_post'
+  patch 'books/index' => 'books#index', as: 'index'
 
 end

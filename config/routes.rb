@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get '/' => 'home#top'
+
+  root to: 'home#top'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get 'books/index' => 'books#index', as: 'index_book'
+  get 'books' => 'books#index', as: 'index_book'
 
   post 'books' => 'books#create'
 
@@ -13,6 +14,6 @@ Rails.application.routes.draw do
 
   delete 'books/:id' => 'books#destroy', as: 'destroy_book'
 
-  patch 'books/index' => 'books#index', as: 'index'
+  patch 'books' => 'books#index', as: 'index'
 
 end
